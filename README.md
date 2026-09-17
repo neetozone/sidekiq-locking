@@ -187,7 +187,8 @@ Sidekiq::Locking.redis_key_prefix = "my-app:sidekiq:locking:"
 ```text
 perform_async
   → client middleware builds a lock key from (class, queue, args)
-  → Redis: SET sidekiq:locking:<digest> <jid> GET NX PX <ttl_ms>
+  → Redis: SET sidekiq:locking:<digest> <jid> NX PX <ttl_ms>
+              (plus a GET of the holder when the claim loses, in one script)
 
   Acquired (key was new):
     → stamp job["lock_token"] = digest, push the job
