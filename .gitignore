@@ -1,0 +1,10 @@
+/.bundle/
+/pkg/
+/tmp/
+/coverage/
+/doc/
+*.gem
+.DS_Store
+
+# This is a library; lockfile is intentionally not committed.
+Gemfile.lock
