@@ -4,7 +4,7 @@
 set -euo pipefail
 
 git fetch -q origin main
-if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]]; then
+if [[ "$(git rev-parse HEAD)" != "$(git rev-parse FETCH_HEAD)" ]]; then
   echo "Not on main; skipping gem publish."
   exit 0
 fi
