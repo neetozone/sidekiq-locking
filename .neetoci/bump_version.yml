@@ -1,0 +1,12 @@
+version: v1.0
+fail_fast: true
+plan: standard-2
+
+triggers:
+  - event: branch
+    branch_name: main
+
+commands:
+  - checkout
+  - neetoci-version ruby 4.0.5
+  - bash ./.neetoci/scripts/bump_version.sh

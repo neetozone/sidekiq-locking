@@ -12,7 +12,6 @@ commands:
   - cache store
 
   - bundle exec rake test
-  - bash .neetoci/scripts/publish_gem.sh
 
 triggers:
   - event: branch
