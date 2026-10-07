@@ -1,5 +1,9 @@
 set -e
 
+# NeetoCI defaults to a US-ASCII locale, and the gemspec has UTF-8
+# characters that bump_gem_version reads.
+export LC_ALL=C.UTF-8 LANG=C.UTF-8
+
 # This repo is public, so the gem server token comes from the
 # NEETO_GEM_SERVER_TOKEN env var in NeetoCI project settings.
 : "${NEETO_GEM_SERVER_TOKEN:?NEETO_GEM_SERVER_TOKEN is not set}"
