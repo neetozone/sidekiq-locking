@@ -25,7 +25,7 @@ bump_gem() {
   bump_gem_version current
   gem install geminabox
   gem build
-  gem inabox *.gem --host "https://${NEETO_GEM_SERVER_TOKEN}@private-gems.neeto.com"
+  gem inabox *.gem --host "https://${GEM_SERVER_PUSH_TOKEN:?is not set. Add it as a NeetoCI organization variable}@private-gems.neeto.com"
   rm *.gem
 }
 
