@@ -4,10 +4,6 @@ set -e
 # characters that bump_gem_version reads.
 export LC_ALL=C.UTF-8 LANG=C.UTF-8
 
-# This repo is public, so the gem server token comes from the
-# NEETO_GEM_SERVER_TOKEN env var in NeetoCI project settings.
-: "${NEETO_GEM_SERVER_TOKEN:?NEETO_GEM_SERVER_TOKEN is not set}"
-
 install_gh() {
   type -p curl >/dev/null || sudo apt install curl -y
   curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
